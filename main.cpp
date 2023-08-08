@@ -1,9 +1,37 @@
 #include<iostream>
-
+#include<vector>
 
 int main()
 {
-	
+	std::vector<int> v1{2, 3, 1, 5, 6};
+	std::vector<std::string>v2{"doggy", "kitty", "bunny"};
+	std::cout << v1[0] << std::endl;
+	for (int i = 0; i < v2.size(); i++)
+	{
+		std::cout << v2[i] << std::endl;
+	}
+
+	//생성자
+	std::vector<int> v3(5);
+	std::vector<int> v4(5, 10);
+	for (int i = 0; i < v3.size(); i++)
+	{
+		std::cout << v3[i] << std::endl;
+	}
+
+	//Ramge-vased loop:  [0:size) = 0 ~size-1
+	// [2:3] = 2이상 3이하
+	// (2:3) = 2초과 3미만
+	for (int e:v1)
+	{
+		std::cout << e << std::endl;
+	}
+
+	int numbers[]{ 1,2,3,4,5 };
+	for (int number : numbers)
+	{
+		std::cout << number << std::endl;
+	}
 }
 
 /*
