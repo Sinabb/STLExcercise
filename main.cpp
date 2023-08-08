@@ -3,37 +3,48 @@
 
 int main()
 {
-	std::vector<int> v1{2, 3, 1, 5, 6};
-	std::vector<std::string>v2{"doggy", "kitty", "bunny"};
-	std::cout << v1[0] << std::endl;
-	for (int i = 0; i < v2.size(); i++)
+	std::vector<int> v;
+	int num;
+	int minCount = 0;
+	while (std::cin >> num)
 	{
-		std::cout << v2[i] << std::endl;
+		v.push_back(num);
+		std::cout << "Out:" << num << std::endl;
+		if (num < v[minCount])
+		{
+			minCount = v.size() - 1;
+		}
 	}
 
-	//생성자
-	std::vector<int> v3(5);
-	std::vector<int> v4(5, 10);
-	for (int i = 0; i < v3.size(); i++)
-	{
-		std::cout << v3[i] << std::endl;
-	}
-
-	//Ramge-vased loop:  [0:size) = 0 ~size-1
-	// [2:3] = 2이상 3이하
-	// (2:3) = 2초과 3미만
-	for (int e:v1)
-	{
-		std::cout << e << std::endl;
-	}
-
-	int numbers[]{ 1,2,3,4,5 };
-	for (int number : numbers)
-	{
-		std::cout << number << std::endl;
-	}
+	std::cout << "최소값은" << minCount << "번째에 있습니다." << std::endl;
 }
 
+
+/*
+	std::vector<int> v;
+	int num;
+	while (std::cin >> num)
+	{
+		v.push_back(num);
+		std::cout << "Out:" << num << std::endl;
+	}
+
+	int total{};
+	for (int i :v)
+	{
+		total += i;
+	}
+	std::cout << "합계:" << total << std::endl;
+*/
+
+/*
+std::vector<int> v;
+	int num{ };
+	while (std::cin >>num)
+	{
+		std::cout << "out"<<num << std::endl;
+	}
+*/
 /*
 	std::string s1, s2;
 
@@ -103,5 +114,48 @@ int main()
 		nick.c_str(),rarity,itemName.c_str()
 		);
 		std::cout << output << std::endl;
+}
+*/
+
+/*
+#include<iostream>
+#include<vector>
+
+int main()
+{
+	std::vector<int> v1{2, 3, 1, 5, 6};
+	std::vector<std::string>v2{"doggy", "kitty", "bunny"};
+
+	//배열 첨자
+	std::cout << v1[0] << std::endl;
+	for (int i = 0; i < v2.size(); i++)
+	{
+		std::cout << v2[i] << std::endl;
+	}
+
+	//생성자
+	std::vector<int> v3(5);
+	std::vector<int> v4(5, 10);
+	for (int i = 0; i < v3.size(); i++)
+	{
+		std::cout << v3[i] << std::endl;
+	}
+
+	//Ramge-vased loop:  [0:size) = 0 ~size-1
+	// [2:3] = 2이상 3이하
+	// (2:3) = 2초과 3미만
+	for (int e:v1]
+	{
+		std::cout << e << std::endl;
+	}
+
+	int numbers[]{ 1,2,3,4,5 };
+	for (int number : numbers)
+	{
+		std::cout << number << std::endl;
+	}
+	std::vector<int> v5; //원소가 0개인 벡터
+	v5.push_back(2);
+	v5.push_back(3);
 }
 */
