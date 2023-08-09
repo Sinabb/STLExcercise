@@ -1,23 +1,87 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
+
+//{1,2,3,4}
+std::ostream& operator<<(std::ostream& os, std::vector<int> v)
+{
+	std::cout << "{";
+	for (std::vector<int>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		std::cout << *it;
+		if (it != v.end()-1)
+		{
+			std::cout << ",";
+		}
+	}
+	std::cout << "}";
+	return os;
+}
 
 int main()
 {
-	std::vector<int> v;
-	int num;
-	int minCount = 0;
-	while (std::cin >> num)
-	{
-		v.push_back(num);
-		std::cout << "Out:" << num << std::endl;
-		if (num < v[minCount])
-		{
-			minCount = v.size() - 1;
-		}
-	}
+	std::vector<int> numbers{5, 2, 3, 4, 1};
+	int x = 5, y = 3;
 
-	std::cout << "최소값은" << minCount << "번째에 있습니다." << std::endl;
+	std::cout << std::min(x, y) << std::endl;
+	std::cout << std::min({ 1,2,3,4, }) << std::endl;
+
+	
+	std::vector<int>::iterator result= std::min_element(numbers.begin(), numbers.end());
+	std::cout << *result << std::endl;
+	 
+	return 0;
 }
+
+
+/*
+	lass Student
+	{
+	public:
+		int mNumber;
+	};
+	//유니폼 초기화식을 사용해 1,2,3번 학생을 벡터에 추가해보세요
+
+	std::vector<Student> student{{1}, { 2 }, { 3 }};
+
+	std::vector<Student>::iterator itr = student.begin();
+
+	itr->mNumber = 0;
+*/
+/*
+	std::vector<int> v{1, 2, 3, 4, 5};
+	std::vector<int>::iterator itr;
+
+	itr = v.begin();
+	std::cout << *itr << std::endl;
+
+	itr++;
+	std::cout << *itr << std::endl;
+
+	/*itr = v.end();
+	std::cout << *itr << std::endl;*/
+
+	//traverse
+/*
+itr = v.begin();
+while (itr != v.end())
+{
+	std::cout << *itr << std::endl;
+	itr++;
+}
+for (std::vector<int>::iterator itr = v.begin(); itr != v.end(); itr++)
+{
+	std::cout << *itr << std::endl;
+}
+
+// rangebased loop
+for (int e : v)
+{
+	std::cout << e << std::endl;
+}
+
+auto myAuto = { 1,2,3,4 };
+*/
 
 
 /*
