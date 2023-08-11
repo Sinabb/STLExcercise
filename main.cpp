@@ -296,3 +296,53 @@ int main()
 	v5.push_back(3);
 }
 */
+/*
+	#include <iostream>
+#include <vector>
+#include <algorithm>
+
+struct Student
+{
+	int mNumber;
+	int mScore;
+	std::string mName;
+};
+
+bool AscendingOrder(const Student& a, const Student& b)
+{
+	return a.mScore < b.mScore;
+}
+
+bool DescendingOrder(const Student& a, const Student& b)
+{
+	return a.mScore > b.mScore;
+}
+
+int main()
+{
+	std::vector<Student> students;
+
+	students.push_back({ 1, 100, "Doggy" });
+	students.push_back({ 2, 50, "Kitty" });
+	students.push_back({ 3, 90, "Piggy" });
+	students.push_back({ 4, 20, "Bunny" });
+
+	std::sort(students.begin(), students.end(), AscendingOrder);
+
+	std::cout << "오름차순" << std::endl;;
+	for (const Student& student : students)
+	{
+		std::cout << student.mNumber << ", " << student.mScore << ", " << student.mName << "\n";
+	}
+
+	std::sort(students.begin(), students.end(), DescendingOrder);
+
+	std::cout << "내림차순" << std::endl;;
+	for (const Student& student : students)
+	{
+		std::cout << student.mNumber << ", " << student.mScore << ", " << student.mName << "\n";
+	}
+
+	return 0;
+}
+*/
