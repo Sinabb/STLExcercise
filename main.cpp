@@ -2,10 +2,11 @@
 #include <vector>
 #include <algorithm>
 #include "Ex2.h"
+#include "Ex3.h"
 
 int main()
 {
-	Ex2();
+	Ex3();
 }
 /*
 		int mNumber;
