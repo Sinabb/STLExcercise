@@ -1,12 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include "Ex2.h"
-#include "Ex3.h"
+#include "Ex4.h"
 
 int main()
 {
-	Ex3();
+	Ex4();
 }
 /*
 		int mNumber;
