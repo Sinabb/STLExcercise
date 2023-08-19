@@ -35,10 +35,10 @@ void AddStudent(std::vector<Student>& v)
 				return;
 			}
 		}*/
-		std::find_if(v.begin(), v.end(), [&](const auto& e) {return e.mNumber == newStudent.mNumber; });
+		auto itr = std::find_if(v.begin(), v.end(), [&](const auto& e) {return e.mNumber == newStudent.mNumber; });
 		if (itr != v.end())
 		{
-			
+			v.push_back(newStudent);
 		}
 		v.push_back(newStudent);
 	}
@@ -63,6 +63,8 @@ void RemoveStudent(std::vector<Student>& v)
 				break;
 			}
 		}*/
+
+		std::remove_if(v.begin(), v.end(), [&](auto& e) {return e.mNumber == mNumber; });
 	}
 	else
 	{
