@@ -72,7 +72,7 @@ void RemoveStudent(std::vector<Student>& v)
 	}
 }
 
-void PrintStudent(std::vector<Student>& v)
+void PrintStudents(const std::vector<Student>& v) 
 {
 	for (const auto& e : v)
 	{
